@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-10T15:17:56.253Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="-2IunCF9wwgCj9TxSk2L" version="22.1.18" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2024-01-10T15:21:33.303Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="F8uWZwDcRmJttg1J_2nH" version="22.1.18" type="github" pages="2">
   <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
     <mxGraphModel dx="1105" dy="595" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" math="0" shadow="0">
       <root>
@@ -647,6 +647,15 @@
         </mxCell>
         <mxCell id="OkeoQm0nhMe716imF_27-13" value="1:N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="1000" y="758" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OkeoQm0nhMe716imF_27-15" value="Cantidad" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="630" y="907" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OkeoQm0nhMe716imF_27-16" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.957;exitY=0.313;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="OkeoQm0nhMe716imF_27-15" target="OkeoQm0nhMe716imF_27-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="940" as="sourcePoint" />
+            <mxPoint x="840" y="940" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
