@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5839738-bd17-402f-8c76-e8167caa391c" name="Changes" comment="Commit inicial">
-      <change afterPath="$PROJECT_DIR$/login/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/migrations/__init__.py" afterDir="false" />
+    <list default="true" id="b5839738-bd17-402f-8c76-e8167caa391c" name="Changes" comment="Mysql Connected to Django and added empelados users">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ERP_HardSpot/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ERP_HardSpot/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ERP_HardSpot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ERP_HardSpot/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ERP_HardSpot/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ERP_HardSpot/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705503046216</updated>
       <workItem from="1705503053154" duration="120000" />
-      <workItem from="1705503185278" duration="4377000" />
+      <workItem from="1705503185278" duration="4723000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial">
       <option name="closed" value="true" />
@@ -152,7 +150,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705504551740</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Mysql Connected to Django and added empelados users">
+      <option name="closed" value="true" />
+      <created>1705507729571</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705507729571</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Mysql Connected to Django and added empelados users">
+      <option name="closed" value="true" />
+      <created>1705507757189</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705507757189</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +174,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit inicial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit inicial" />
+    <MESSAGE value="Mysql Connected to Django and added empelados users" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mysql Connected to Django and added empelados users" />
   </component>
 </project>
