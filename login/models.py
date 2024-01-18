@@ -32,7 +32,7 @@ class Empleados(AbstractBaseUser, PermissionsMixin):
     # lowercase.
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['nombre', 'password']
+    REQUIRED_FIELDS = ['nombre', 'password1']
     objects = EmpleadosManager()
 
     class Meta:

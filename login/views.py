@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, HttpResponse, redirect
 
-from login.forms import LoginForm
+from login.forms import LoginForm, RegisterForm
 from login.models import Empleados
 
 
@@ -28,4 +28,19 @@ def login_view(request):
 
 
 def register_view(request):
-    return render(request, "login/register.html")
+    if request.method == "POST":
+        print('request is post')
+        form = RegisterForm(data=request.POST)
+        print('form creado')
+        if form.is_valid():
+            print('form is valid')
+            user = form.save()
+            login(request, user)
+            return redirect("../home/")
+        else:
+            print('form is not valid')
+            print(form.errors)
+    else:
+        form = RegisterForm()
+
+    return render(request, "login/register.html", {'form': form})
