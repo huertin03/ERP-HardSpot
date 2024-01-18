@@ -17,7 +17,7 @@ def login_view(request):
 
             if user is not None:
                 login(request, user)
-                return redirect("../home/")
+                return redirect("../")
             else:
                 form.add_error(None, "Usuario o contraseña incorrectos")
 
@@ -36,7 +36,7 @@ def register_view(request):
             print('form is valid')
             user = form.save()
             login(request, user)
-            return redirect("../home/")
+            return redirect("../")
         else:
             print('form is not valid')
             print(form.errors)
