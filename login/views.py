@@ -1,9 +1,31 @@
-from django.shortcuts import render, HttpResponse
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, HttpResponse, redirect
+
+from login.forms import LoginForm
+from login.models import Empleados
 
 
-def login(request):
-    return render(request, "login/login.html")
+def login_view(request):
+    if request.method == "POST":
+        form = LoginForm(request, data=request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+
+            user = Empleados.objects.filter(email=email).first()
+            user = authenticate(username=email, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect("../home/")
+            else:
+                form.add_error(None, "Usuario o contraseña incorrectos")
+
+    else:
+        form = LoginForm()
+
+    return render(request, "login/login.html", {'form': form})
 
 
-def register(request):
+def register_view(request):
     return render(request, "login/register.html")

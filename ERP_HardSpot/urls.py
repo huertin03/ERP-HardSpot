@@ -16,13 +16,17 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth.views import LogoutView
 from django.urls import path
 
 from ERP_HardSpot import settings
-from login.views import login, register
+from login.views import login_view, register_view
+from core.views import home_view
 
 urlpatterns = [
-    path('login/', login),
-    path('login/register/', register),
+    path('login/', login_view, name="login"),
+    path('login/register/', register_view, name="register"),
+    path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
+    path('home/', home_view, name="home"),
     path('admin/', admin.site.urls),
 ]
