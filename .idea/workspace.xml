@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5839738-bd17-402f-8c76-e8167caa391c" name="Changes" comment="Mysql Connected to Django and added empelados users">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/login/EdgeERPImage.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ERP_HardSpot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ERP_HardSpot.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ERP_HardSpot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ERP_HardSpot/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ERP_HardSpot/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ERP_HardSpot/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
     </list>
@@ -16,6 +22,13 @@
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <excluded-from-favorite>
@@ -57,12 +70,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "huertin03"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;huertin03&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -75,19 +88,25 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2b5RdscPWsRTmdu4UOfpM3mot1T" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Django Server.ERP_HardSpot.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Álvaro Huertas/Desktop/DAM2/Sistemas de Gestión Empresarial/Django-ERP/ERP_HardSpot/templates/login",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,6 +116,17 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\templates\login" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\static\login" />
+      <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot" />
+      <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\templates\static" />
+      <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\templates\login" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ERP_HardSpot" type="Python.DjangoServer" factoryName="Django server">
       <module name="ERP_HardSpot" />
@@ -140,7 +170,8 @@
       <option name="presentableId" value="Default" />
       <updated>1705503046216</updated>
       <workItem from="1705503053154" duration="120000" />
-      <workItem from="1705503185278" duration="4723000" />
+      <workItem from="1705503185278" duration="5391000" />
+      <workItem from="1705562653759" duration="2683000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial">
       <option name="closed" value="true" />
@@ -166,13 +197,22 @@
       <option name="project" value="LOCAL" />
       <updated>1705507757189</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Mysql Connected to Django and added empelados users">
+      <option name="closed" value="true" />
+      <created>1705509635251</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705509635251</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Commit inicial" />
     <MESSAGE value="Mysql Connected to Django and added empelados users" />
     <option name="LAST_COMMIT_MESSAGE" value="Mysql Connected to Django and added empelados users" />
