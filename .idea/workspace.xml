@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5839738-bd17-402f-8c76-e8167caa391c" name="Changes" comment="Empleado flow added">
-      <change afterPath="$PROJECT_DIR$/templates/login/modificaEmpleadoContraseña.html" afterDir="false" />
+    <list default="true" id="b5839738-bd17-402f-8c76-e8167caa391c" name="Changes" comment="Empleado flow upgraded">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ERP_HardSpot/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ERP_HardSpot/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +170,7 @@
       <workItem from="1705562653759" duration="15533000" />
       <workItem from="1705586597019" duration="270000" />
       <workItem from="1705605651713" duration="1608000" />
-      <workItem from="1705680113782" duration="8016000" />
+      <workItem from="1705680113782" duration="8971000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial">
       <option name="closed" value="true" />
@@ -239,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705688147240</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Empleado flow upgraded">
+      <option name="closed" value="true" />
+      <created>1705690319112</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1705690319112</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +269,7 @@
     <MESSAGE value="Authentication flow added" />
     <MESSAGE value="Registration flow added" />
     <MESSAGE value="Empleado flow added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Empleado flow added" />
+    <MESSAGE value="Empleado flow upgraded" />
+    <option name="LAST_COMMIT_MESSAGE" value="Empleado flow upgraded" />
   </component>
 </project>
