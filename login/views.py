@@ -47,3 +47,6 @@ def register_view(request):
 
 def empleado_view(request):
     return render(request, "login/modificaEmpleado.html")
+
+def empleado_contraseña_view(request):
+    return render(request, "login/modificaEmpleadoContraseña.html")

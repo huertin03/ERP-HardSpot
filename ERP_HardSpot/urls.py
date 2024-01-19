@@ -20,13 +20,14 @@ from django.contrib.auth.views import LogoutView
 from django.urls import path
 
 from ERP_HardSpot import settings
-from login.views import login_view, register_view, empleado_view
+from login.views import login_view, register_view, empleado_view, empleado_contraseña_view
 from core.views import home_view
 
 urlpatterns = [
     path('login/', login_view, name="login"),
     path('register/', register_view, name="register"),
     path('empleado/', empleado_view, name="empleado"),
+    path('empleadoContraseña/', empleado_contraseña_view, name="empleadoContraseña"),
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('', home_view, name="home"),
     path('admin/', admin.site.urls),
