@@ -44,3 +44,6 @@ def register_view(request):
         form = RegisterForm()
 
     return render(request, "login/register.html", {'form': form})
+
+def empleado_view(request):
+    return render(request, "login/modificaEmpleado.html")
