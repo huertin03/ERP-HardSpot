@@ -4,8 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5839738-bd17-402f-8c76-e8167caa391c" name="Changes" comment="Empleado flow upgraded">
+    <list default="true" id="b5839738-bd17-402f-8c76-e8167caa391c" name="Changes" comment="Registration flow added">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/empleado/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/empleado/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/empleado/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/empleado/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/empleado/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/empleado/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/empleado/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/empleado/listaEmpleados.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/empleado/modificaEmpleado.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ERP_HardSpot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ERP_HardSpot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ERP_HardSpot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ERP_HardSpot/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ERP_HardSpot/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ERP_HardSpot/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/modificaEmpleadoContraseña.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/empleado/modificaEmpleadoContraseña.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -76,9 +95,6 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -90,32 +106,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Django Server.ERP_HardSpot.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aleja/OneDrive/Documentos/DAM2/DI/ERP-HardSpot&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.ERP_HardSpot.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
+    "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Álvaro Huertas/Desktop/DAM2/Sistemas de Gestión Empresarial/Django-ERP/ERP_HardSpot/templates/login",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\templates\login" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\templates\empleado" />
       <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\static\login" />
       <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot" />
       <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\templates\static" />
@@ -133,7 +151,7 @@
         <env name="DJANGO_SETTINGS_MODULE" value="ERP_HardSpot.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12" />
+      <option name="SDK_NAME" value="Python 3.11 (ERP_HardSpot)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -169,8 +187,6 @@
       <workItem from="1705503185278" duration="5391000" />
       <workItem from="1705562653759" duration="15533000" />
       <workItem from="1705586597019" duration="270000" />
-      <workItem from="1705605651713" duration="1608000" />
-      <workItem from="1705680113782" duration="8971000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial">
       <option name="closed" value="true" />
@@ -228,38 +244,11 @@
       <option name="project" value="LOCAL" />
       <updated>1705580643164</updated>
     </task>
-    <task id="LOCAL-00008" summary="Empleado flow added">
-      <option name="closed" value="true" />
-      <created>1705688147239</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1705688147240</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Empleado flow upgraded">
-      <option name="closed" value="true" />
-      <created>1705690319112</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1705690319112</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -268,8 +257,6 @@
     <MESSAGE value="Added login and register templates and its images" />
     <MESSAGE value="Authentication flow added" />
     <MESSAGE value="Registration flow added" />
-    <MESSAGE value="Empleado flow added" />
-    <MESSAGE value="Empleado flow upgraded" />
-    <option name="LAST_COMMIT_MESSAGE" value="Empleado flow upgraded" />
+    <option name="LAST_COMMIT_MESSAGE" value="Registration flow added" />
   </component>
 </project>

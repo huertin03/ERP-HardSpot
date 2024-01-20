@@ -45,8 +45,10 @@ def register_view(request):
 
     return render(request, "login/register.html", {'form': form})
 
-def empleado_view(request):
-    return render(request, "login/modificaEmpleado.html")
 
-def empleado_contraseña_view(request):
-    return render(request, "login/modificaEmpleadoContraseña.html")
+def empleado_view(request):
+    return render(request, "empleado/modificaEmpleado.html")
+
+
+def empleado_contrasegna_view(request):
+    return render(request, "empleado/modificaEmpleadoContraseña.html")
