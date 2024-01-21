@@ -20,8 +20,8 @@ from django.contrib.auth.views import LogoutView
 from django.urls import path
 
 from ERP_HardSpot import settings
-from login.views import login_view, register_view, empleado_view, empleado_contrasegna_view
-from empleado.views import lista_empleados_view
+from login.views import login_view, register_view, empleado_contrasegna_view
+from empleado.views import lista_empleados_view, empleado_view
 from core.views import home_view
 
 urlpatterns = [

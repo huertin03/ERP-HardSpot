@@ -28,20 +28,31 @@
     }
 </style>
 <script>
-
-
-    function editar() {
+    var originalValues = [];
+    window.onload = function() {
         var inputs = document.getElementsByTagName("input");
-        var btn = document.getElementById("editar");
-        if(btn.innerText==="Editar"){
-            btn.innerText="Guardar";
+        for (var i = 0; i < inputs.length; i++) {
+            originalValues[i] = inputs[i].value;
+        }
+    }
+
+    window.editar = function () {
+        var inputs = document.getElementsByTagName("input");
+        var btnEditar = document.getElementById("editar");
+        var btnGuardar = document.getElementById("guardar");
+        if(btnEditar.innerText==="Editar"){
+            btnEditar.innerText="Cancelar";
+            btnGuardar.type="submit";
             for (var i = 0; i < inputs.length; i++) {
-                inputs[i].disabled = false;
+                if (inputs[i].id !== "sexo" && inputs[i].id !== "email")
+                    inputs[i].disabled = false;
             }
         }else{
-            btn.innerText="Editar";
+            btnEditar.innerText="Editar";
+            btnGuardar.type="hidden";
             for (var i = 0; i < inputs.length; i++) {
                 inputs[i].disabled = true;
+                inputs[i].value = originalValues[i];
             }
         }
 
@@ -68,41 +79,56 @@
                                     <a href="../"><span class="material-symbols-outlined me-3 fs-1 text-light">home</span></a>
                                 </div>
 
-                            </div>
-                        </div>
-
+                            
+                        
+                        <<form method="POST" action="{% url 'empleado' %}">
+                        {% csrf_token %}
+                        
                         <div class="row p-5 " style="height: 70%;z-index: 10;">
+                            
                             <div class="col-6 bg-light">
+                                
                                 <div class="mb-4 mt-4">
-                                <input type="email" class="form-control shadow " disabled id="exampleFormControlInput1" placeholder="{{ user.nombre }}">
+                                    
+                                    <input type="text" class="form-control shadow " disabled id="nombre" name="nombre" value="{{ user.nombre }}" placeholder="Nombre">
                                 </div>
                                 <div class="mb-4">
-                                    <input type="email" class="form-control shadow" disabled id="exampleFormControlInput2" placeholder="{{ user.email }}">
+                                    <input type="email" class="form-control shadow" disabled id="email" name="email" value="{{ user.email }}">
                                 </div>
                                     <div class="mb-4">
-                                    <input type="email" class="form-control shadow" disabled id="exampleFormControlInput3" placeholder="Dirección">
+                                    <input type="text" class="form-control shadow" disabled id="direccion" name="direccion" value="{{ user.direccion|default_if_none:'' }}" placeholder="Dirección">
                                 </div>
                                 <div >
-                                    <input type="email" class="form-control shadow" disabled id="exampleFormControlInput4" placeholder="Sexo">
+                                    <input type="text" class="form-control shadow" disabled id="sexo" name="sexo" value="{{ user.sexo }}">
                                 </div>
                             </div>
                             <div class="col-6 bg-light">
                                 <div class="mb-4 mt-4">
-                                <input type="email" class="form-control shadow" disabled id="exampleFormControlInput5" placeholder="{{ user.apellidos }}">
+                                <input type="text" class="form-control shadow" disabled id="apellidos" name="apellidos" value="{{ user.apellidos|default_if_none:'' }}" placeholder="Apellidos">
                                 </div>
                                 <div class="mb-4">
-                                    <input type="email" class="form-control shadow" disabled id="exampleFormControlInput6" placeholder="{{ user.telefono }}">
+                                    <input type="tel" class="form-control shadow" disabled id="telefono" name="telefono" value="{{ user.telefono|default_if_none:'' }}" placeholder="Teléfono">
                                 </div>
                                     <div class="mb-4">
-                                    <input type="email" class="form-control shadow" disabled id="exampleFormControlInput7" placeholder="{{ user.edad }}">
+                                    <input type="number" class="form-control shadow" disabled id="edad" name="edad" value="{{ user.edad|default_if_none:'' }}" placeholder="Edad">
                                 </div>
                                 <div class="d-flex justify-content-center">
+                                    <input type="hidden" id="idempleado" name="idempleado" value="{{ user.idempleado }}"/>
+                                     <input id="guardar" type="hidden" value="Guardar" class="btn btn-success me-3"/>
+                                </div>
+                            </div>
+                        
+                        </div>
+                            </form>
+                                <div class="d-flex justify-content-center">
+                                    
+                                    
                                     <button id="editar" onclick="editar()" class="btn btn-info me-3">Editar</button>
+                                   
                                     <a href="../empleadoContraseña" class="btn btn-danger" >Restablecer contraseña</a>
                                 </div>
                             </div>
-
-                        </div>
+                    </div>
                     </div>
                 </div>
             </div>

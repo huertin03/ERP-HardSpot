@@ -29,6 +29,8 @@ class Empleados(AbstractBaseUser, PermissionsMixin):
     edad = models.IntegerField(db_column='Edad', blank=True, null=True)  # Field name made lowercase.
     email = models.CharField(db_column='Email', max_length=255, blank=True, null=True, unique=True)  # Field name made lowercase.
     telefono = models.CharField(db_column='Telefono', max_length=20, blank=True, null=True)  # Field name made
+    sexo = models.CharField(max_length=6, choices=[('Hombre', 'Hombre'), ('Mujer', 'Mujer')], default='Hombre')
+    direccion = models.CharField(db_column='Direccion', max_length=255, blank=True, null=True)  # Field name made
     # lowercase.
 
     USERNAME_FIELD = 'email'
