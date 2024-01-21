@@ -72,59 +72,60 @@
                             </div>
                             <div style="height: 100%;position: absolute;" class="row g-0 mt-3 ">
                                 <div class="d-flex justify-content-end align-items-start">
-                                    <form action="{% url 'logout' %}" method="post" class="me-3">
-                                        {% csrf_token %}
-                                        <button type="submit" class="btn btn-danger">Logout</button>
-                                    </form>
+                                    {% if empleado.idempleado == user.idempleado %}
+                                        <form action="{% url 'logout' %}" method="post" class="me-3">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-danger">Logout</button>
+                                        </form>
+                                    {% endif %}
                                     <a href="../"><span class="material-symbols-outlined me-3 fs-1 text-light">home</span></a>
                                 </div>
 
-                            
-                        
-                        <<form method="POST" action="{% url 'empleado' %}">
+
+
+                        <form method="POST" action="{% if empleado.idempleado == user.idempleado %}{% url 'empleado' %}{% else %}{% url 'modificar_empleado' empleado.idempleado %}{% endif %}">
                         {% csrf_token %}
-                        
+
                         <div class="row p-5 " style="height: 70%;z-index: 10;">
-                            
+
                             <div class="col-6 bg-light">
-                                
+
                                 <div class="mb-4 mt-4">
-                                    
-                                    <input type="text" class="form-control shadow " disabled id="nombre" name="nombre" value="{{ user.nombre }}" placeholder="Nombre">
+
+                                    <input type="text" class="form-control shadow " disabled id="nombre" name="nombre" value="{{ empleado.nombre }}" placeholder="Nombre">
                                 </div>
                                 <div class="mb-4">
-                                    <input type="email" class="form-control shadow" disabled id="email" name="email" value="{{ user.email }}">
+                                    <input type="email" class="form-control shadow" disabled id="email" name="email" value="{{ empleado.email }}">
                                 </div>
                                     <div class="mb-4">
-                                    <input type="text" class="form-control shadow" disabled id="direccion" name="direccion" value="{{ user.direccion|default_if_none:'' }}" placeholder="Dirección">
+                                    <input type="text" class="form-control shadow" disabled id="direccion" name="direccion" value="{{ empleado.direccion|default_if_none:'' }}" placeholder="Dirección">
                                 </div>
                                 <div >
-                                    <input type="text" class="form-control shadow" disabled id="sexo" name="sexo" value="{{ user.sexo }}">
+                                    <input type="text" class="form-control shadow" disabled id="sexo" name="sexo" value="{{ empleado.sexo }}">
                                 </div>
                             </div>
                             <div class="col-6 bg-light">
                                 <div class="mb-4 mt-4">
-                                <input type="text" class="form-control shadow" disabled id="apellidos" name="apellidos" value="{{ user.apellidos|default_if_none:'' }}" placeholder="Apellidos">
+                                <input type="text" class="form-control shadow" disabled id="apellidos" name="apellidos" value="{{ empleado.apellidos|default_if_none:'' }}" placeholder="Apellidos">
                                 </div>
                                 <div class="mb-4">
-                                    <input type="tel" class="form-control shadow" disabled id="telefono" name="telefono" value="{{ user.telefono|default_if_none:'' }}" placeholder="Teléfono">
+                                    <input type="tel" class="form-control shadow" disabled id="telefono" name="telefono" value="{{ empleado.telefono|default_if_none:'' }}" placeholder="Teléfono">
                                 </div>
                                     <div class="mb-4">
-                                    <input type="number" class="form-control shadow" disabled id="edad" name="edad" value="{{ user.edad|default_if_none:'' }}" placeholder="Edad">
+                                    <input type="number" class="form-control shadow" disabled id="edad" name="edad" value="{{ empleado.edad|default_if_none:'' }}" placeholder="Edad">
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <input type="hidden" id="idempleado" name="idempleado" value="{{ user.idempleado }}"/>
                                      <input id="guardar" type="hidden" value="Guardar" class="btn btn-success me-3"/>
                                 </div>
                             </div>
-                        
+
                         </div>
                             </form>
                                 <div class="d-flex justify-content-center">
-                                    
-                                    
+
+
                                     <button id="editar" onclick="editar()" class="btn btn-info me-3">Editar</button>
-                                   
+
                                     <a href="../empleadoContraseña" class="btn btn-danger" >Restablecer contraseña</a>
                                 </div>
                             </div>
