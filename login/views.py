@@ -52,3 +52,7 @@ def empleado_view(request):
 
 def empleado_contrasegna_view(request):
     return render(request, "empleado/modificaEmpleadoContraseña.html")
+
+
+def home_view(request):
+    return render(request, "home/home.html")
