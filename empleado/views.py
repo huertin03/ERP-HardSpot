@@ -26,8 +26,10 @@ def empleado_view(request):
             empleado = Empleados.objects.get(idempleado=idempleado)
             empleado.nombre = nombre if nombre is not None else empleado.nombre
             empleado.apellidos = apellidos if apellidos is not None else empleado.apellidos
-            empleado.edad = edad if edad is not None else empleado.edad
-            empleado.telefono = telefono if telefono is not None else empleado.telefono
+            edad = int(edad) if edad != '' else 0
+            empleado.edad = edad if edad != 0 else empleado.edad
+            telefono = int(telefono) if telefono != '' else 0
+            empleado.telefono = telefono if telefono != 0 else empleado.telefono
             empleado.direccion = direccion if direccion is not None else empleado.direccion
             empleado.save()
             # messages.success(request, 'Empleado modificado correctamente')
