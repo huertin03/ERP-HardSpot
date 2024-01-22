@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5839738-bd17-402f-8c76-e8167caa391c" name="Changes" comment="Finished update authenticated user and list employees">
+      <change afterPath="$PROJECT_DIR$/templates/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2c8396bc-fb1a-4e58-918b-f6eb41a495f0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2c8396bc-fb1a-4e58-918b-f6eb41a495f0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2024_14_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2024_14_19__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ERP_HardSpot/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ERP_HardSpot/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empleado/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/empleado/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/empleado/listaEmpleados.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/empleado/listaEmpleados.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/empleado/modificaEmpleado.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/empleado/modificaEmpleado.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +105,7 @@
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Álvaro Huertas/Desktop/DAM2/Sistemas de Gestión Empresarial/Django-ERP/ERP_HardSpot/templates/login",
+    "last_opened_file_path": "C:/Users/aleja/OneDrive/Documentos/DAM2/DI/ERP-HardSpot",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -137,7 +138,7 @@
         <env name="DJANGO_SETTINGS_MODULE" value="ERP_HardSpot.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.11 (ERP_HardSpot)" />
+      <option name="SDK_NAME" value="Python 3.12" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -174,6 +175,7 @@
       <workItem from="1705562653759" duration="15533000" />
       <workItem from="1705586597019" duration="270000" />
       <workItem from="1705832991626" duration="12169000" />
+      <workItem from="1705947916979" duration="398000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial">
       <option name="closed" value="true" />
