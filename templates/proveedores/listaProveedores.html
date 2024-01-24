@@ -27,6 +27,7 @@
         .scrollable-table {
             display: block;
             max-height: 400px;
+            /* cambiar a 350 cuando mostrarFormulario() */
             overflow-y: auto;
             -ms-overflow-style: -ms-autohiding-scrollbar;
         }
@@ -72,46 +73,56 @@
                             </div>
                         
                             <!-- Botón para mostrar el formulario -->
-                            <button onclick="mostrarFormulario()" class="btn btn-primary w-50 align-self-center mx-5">Agregar proveedor</button>
+                            <button id="botonFormulario" onclick="mostrarFormulario()" class="btn btn-primary w-50 align-self-center mx-5">Agregar proveedor</button>
                         
                             <!-- Formulario para agregar un nuevo proveedor -->
-                            <div id="formularioProveedor" style="display: none;">
+                            <div id="formularioProveedor" class="mx-5" style="display: none;">
                                 <form action="{% url 'listaProveedores' %}" method="post" class="row g-3">
                                     {% csrf_token %}
                                     <div class="col">
-                                        <input type="text" id="id" name="id" class="form-control" placeholder="ID">
+                                        <input type="text" id="id" name="id" class="form-control mt-1" placeholder="ID">
                                     </div>
                                     <div class="col">
-                                        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre">
+                                        <input type="text" id="nombre" name="nombre" class="form-control mt-1" placeholder="Nombre">
                                     </div>
                                     <div class="col">
-                                        <input type="text" id="email" name="email" class="form-control" placeholder="Email">
+                                        <input type="text" id="email" name="email" class="form-control mt-1" placeholder="Email">
                                     </div>
                                     <div class="col">
-                                        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Teléfono">
+                                        <input type="text" id="telefono" name="telefono" class="form-control mt-1" placeholder="Teléfono">
                                     </div>
                                     <div class="col">
-                                        <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Dirección">
+                                        <input type="text" id="direccion" name="direccion" class="form-control mt-1" placeholder="Dirección">
                                     </div>
                                     <div class="col">
-                                        <input type="submit" value="Agregar" class="btn btn-primary mt-3">
+                                        <input type="submit" value="Agregar" class="btn btn-success mt-1">
                                     </div>
                                 </form>
                             </div>
                             
                             <!-- Función JavaScript para mostrar el formulario -->
                             <script>
-                            function mostrarFormulario() {
-                                var formulario = document.getElementById("formularioProveedor");
-                                if (formulario.style.display === "none") {
-                                    formulario.style.display = "block";
-                                } else {
-                                    formulario.style.display = "none";
+                                function mostrarFormulario() {
+                                    var formulario = document.getElementById("formularioProveedor");
+                                    var boton = document.getElementById("botonFormulario");
+                                    var tabla = document.querySelector(".scrollable-table");
+                                    if (formulario.style.display === "none") {
+                                        formulario.style.display = "block";
+                                        boton.textContent = "Cancelar";
+                                        boton.classList.remove("btn-primary");
+                                        boton.classList.add("btn-danger");
+                                        tabla.style.maxHeight = "350px";
+                                    } else {
+                                        formulario.style.display = "none";
+                                        boton.textContent = "Agregar proveedor";
+                                        boton.classList.remove("btn-danger");
+                                        boton.classList.add("btn-primary");
+                                        tabla.style.maxHeight = "400px";
+                                    }
                                 }
-                            }
                             </script>
                             
-                            <div class="table-responsive p-5">
+                            <div class="table-responsive px-5">
                                 <table class="table table-striped table-hover scrollable-table">
                                     <thead>
                                         <tr>
