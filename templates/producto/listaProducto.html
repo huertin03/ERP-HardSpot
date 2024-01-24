@@ -70,7 +70,54 @@
                                 </div></a>
                             <a href="{% url 'home' %}"><span class="material-symbols-outlined me-3 fs-1 text-light">home</span></a>
                             </div>
-                            <div class="table-responsive p-5">
+                            
+                            <!-- Botón para mostrar el formulario -->
+                            <button id="botonFormulario" onclick="mostrarFormulario()" class="btn btn-primary w-50 align-self-center mx-5">Agregar producto</button>
+                        
+                            <!-- Formulario para agregar un nuevo proveedor -->
+                            <div id="formularioProducto" class="mx-5" style="display: none;">
+                                <form action="{% url 'listaProductos' %}" method="post" class="row g-3">
+                                    {% csrf_token %}
+                                    <div class="col">
+                                        <input type="text" id="nombre" name="nombre" class="form-control mt-1" placeholder="Nombre">
+                                    </div>
+                                    <div class="col">
+                                        <input type="number" step="0.01" min="1" id="precio" name="precio" class="form-control mt-1" placeholder="Precio">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="categoria" name="categoria" class="form-control mt-1" placeholder="Categoría">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="descripcion" name="descripcion" class="form-control mt-1" placeholder="Descripción">
+                                    </div>
+                                    <div class="col">
+                                        <input type="submit" value="Agregar" class="btn btn-success mt-1">
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Función JavaScript para mostrar el formulario -->
+                            <script>
+                                function mostrarFormulario() {
+                                    var formulario = document.getElementById("formularioProducto");
+                                    var boton = document.getElementById("botonFormulario");
+                                    var tabla = document.querySelector(".scrollable-table");
+                                    if (formulario.style.display === "none") {
+                                        formulario.style.display = "block";
+                                        boton.textContent = "Cancelar";
+                                        boton.classList.remove("btn-primary");
+                                        boton.classList.add("btn-danger");
+                                        tabla.style.maxHeight = "350px";
+                                    } else {
+                                        formulario.style.display = "none";
+                                        boton.textContent = "Agregar producto";
+                                        boton.classList.remove("btn-danger");
+                                        boton.classList.add("btn-primary");
+                                        tabla.style.maxHeight = "400px";
+                                    }
+                                }
+                            </script>
+                            <div class="table-responsive px-5">
                                 <table class="table table-striped table-hover scrollable-table">
                                     <thead>
                                         <tr>

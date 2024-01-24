@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5839738-bd17-402f-8c76-e8167caa391c" name="Changes" comment="Added listar proveedores y añadir proveedores">
+    <list default="true" id="b5839738-bd17-402f-8c76-e8167caa391c" name="Changes" comment="styled anadir proveedor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/producto/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/producto/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proveedores/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/empleado/modificaEmpleado.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/empleado/modificaEmpleado.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/producto/listaProducto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/producto/listaProducto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/proveedores/listaProveedores.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/proveedores/listaProveedores.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,7 +179,7 @@
       <workItem from="1705832991626" duration="12169000" />
       <workItem from="1705947916979" duration="398000" />
       <workItem from="1706081958610" duration="4431000" />
-      <workItem from="1706104885108" duration="4741000" />
+      <workItem from="1706104885108" duration="7670000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial">
       <option name="closed" value="true" />
@@ -265,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706109601768</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="styled anadir proveedor">
+      <option name="closed" value="true" />
+      <created>1706110670783</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1706110670783</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,6 +294,7 @@
     <MESSAGE value="Finished update authenticated user and list employees" />
     <MESSAGE value="Added listar clientes y listar productos" />
     <MESSAGE value="Added listar proveedores y añadir proveedores" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added listar proveedores y añadir proveedores" />
+    <MESSAGE value="styled anadir proveedor" />
+    <option name="LAST_COMMIT_MESSAGE" value="styled anadir proveedor" />
   </component>
 </project>
