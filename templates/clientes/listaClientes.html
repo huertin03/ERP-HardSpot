@@ -49,7 +49,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 20em;
+            max-width: 10em;
         }
     </style>
 </head>
@@ -75,22 +75,22 @@
                                             <th>ID</th>
                                             <th>Nombre</th>
                                             <th>Apellidos</th>
-                                            <th>Sexo</th>
-                                            <th>Teléfono</th>
                                             <th>Email</th>
-                                            <th>Dirección</th>
+                                            <th>Tel&eacute;fono</th>
+                                            <th>Direcci&oacute;n</th>
+                                            <th>M&eacute;todo de pago</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {% for empleado in empleados %}
-                                            <tr onclick="location.href='{% url 'modificar_empleado' idempleado=empleado.idempleado %}'" style="cursor:pointer;">
-                                                <td>{{ empleado.idempleado }}</td>
-                                                <td>{{ empleado.nombre }}</td>
-                                                <td>{{ empleado.apellidos|default_if_none:'&nbsp;' }}</td>
-                                                <td>{{ empleado.sexo }}</td>
-                                                <td>{{ empleado.telefono|default_if_none:'&nbsp;' }}</td>
-                                                <td>{{ empleado.email }}</td>
-                                                <td>{{ empleado.direccion|default_if_none:'&nbsp;' }}</td>
+                                        {% for cliente in clientes %}
+                                            <tr style="cursor:pointer;">
+                                                <td>{{ cliente.idcliente }}</td>
+                                                <td>{{ cliente.nombre }}</td>
+                                                <td>{{ cliente.apellidos }}</td>
+                                                <td>{{ cliente.email }}</td>
+                                                <td>{{ cliente.telefono|default_if_none:'&nbsp;' }}</td>    
+                                                <td class="ellipsis">{{ cliente.direccion|default_if_none:'&nbsp;' }}</td>
+                                            <td>{{ cliente.metodo_de_pago|default_if_none:'&nbsp;' }}</td>
                                             </tr>
                                         {% endfor %}
                                     </tbody>
