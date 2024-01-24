@@ -50,7 +50,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 10em;
+            max-width: 15em;
         }
     </style>
 </head>
@@ -70,29 +70,66 @@
                                 </div></a>
                                 <a href="{% url 'home' %}"><span class="material-symbols-outlined me-3 fs-1 text-light">home</span></a>
                             </div>
+                        
+                            <!-- Botón para mostrar el formulario -->
+                            <button onclick="mostrarFormulario()" class="btn btn-primary w-50 align-self-center mx-5">Agregar proveedor</button>
+                        
+                            <!-- Formulario para agregar un nuevo proveedor -->
+                            <div id="formularioProveedor" style="display: none;">
+                                <form action="{% url 'listaProveedores' %}" method="post" class="row g-3">
+                                    {% csrf_token %}
+                                    <div class="col">
+                                        <input type="text" id="id" name="id" class="form-control" placeholder="ID">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="email" name="email" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Teléfono">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Dirección">
+                                    </div>
+                                    <div class="col">
+                                        <input type="submit" value="Agregar" class="btn btn-primary mt-3">
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Función JavaScript para mostrar el formulario -->
+                            <script>
+                            function mostrarFormulario() {
+                                var formulario = document.getElementById("formularioProveedor");
+                                if (formulario.style.display === "none") {
+                                    formulario.style.display = "block";
+                                } else {
+                                    formulario.style.display = "none";
+                                }
+                            }
+                            </script>
+                            
                             <div class="table-responsive p-5">
                                 <table class="table table-striped table-hover scrollable-table">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
                                             <th>Nombre</th>
-                                            <th>Apellidos</th>
                                             <th>Email</th>
                                             <th>Tel&eacute;fono</th>
                                             <th>Direcci&oacute;n</th>
-                                            <th>M&eacute;todo de pago</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {% for cliente in clientes %}
+                                        {% for proveedor in proveedores %}
                                             <tr style="cursor:pointer;">
-                                                <td>{{ cliente.idcliente }}</td>
-                                                <td>{{ cliente.nombre }}</td>
-                                                <td>{{ cliente.apellidos }}</td>
-                                                <td>{{ cliente.email }}</td>
-                                                <td>{{ cliente.telefono|default_if_none:'&nbsp;' }}</td>    
-                                                <td class="ellipsis">{{ cliente.direccion|default_if_none:'&nbsp;' }}</td>
-                                            <td>{{ cliente.metodo_de_pago|default_if_none:'&nbsp;' }}</td>
+                                                <td>{{ proveedor.idproveedor }}</td>
+                                                <td>{{ proveedor.nombre }}</td>
+                                                <td>{{ proveedor.email }}</td>
+                                                <td>{{ proveedor.telefono|default_if_none:'&nbsp;' }}</td>    
+                                                <td class="ellipsis">{{ proveedor.direccion|default_if_none:'&nbsp;' }}</td>
                                             </tr>
                                         {% endfor %}
                                     </tbody>

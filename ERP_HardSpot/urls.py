@@ -24,6 +24,7 @@ from login.views import login_view, register_view, empleado_contrasegna_view
 from empleado.views import lista_empleados_view, empleado_view, modificar_empleado_view
 from producto.views import lista_productos_view
 from clientes.views import lista_clientes_view
+from proveedores.views import lista_proveedores_view
 from core.views import home_view
 
 
@@ -40,6 +41,8 @@ urlpatterns = [
     path('listaProductos/', lista_productos_view, name="listaProductos"),
 
     path('listaClientes/', lista_clientes_view, name="listaClientes"),
+
+    path('listaProveedores/', lista_proveedores_view, name="listaProveedores"),
 
     path('', home_view, name="home"),
     path('admin/', admin.site.urls),
