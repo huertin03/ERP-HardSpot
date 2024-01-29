@@ -21,7 +21,7 @@ from django.urls import path
 
 from ERP_HardSpot import settings
 from login.views import login_view, register_view, empleado_contrasegna_view
-from empleado.views import lista_empleados_view, empleado_view, modificar_empleado_view
+from empleado.views import lista_empleados_view, empleado_view, modificar_empleado_view, eliminar_empleado
 from producto.views import lista_productos_view
 from clientes.views import lista_clientes_view
 from proveedores.views import lista_proveedores_view
@@ -37,7 +37,7 @@ urlpatterns = [
     path('listaEmpleados/<int:idempleado>/', modificar_empleado_view, name="modificar_empleado"),
     path('empleado/', empleado_view, name="empleado"),
     path('empleadoContraseña/', empleado_contrasegna_view, name="empleadoContraseña"),
-
+    path('eliminar_empleado/<int:id_empleado>/', eliminar_empleado, name='eliminar_empleado'),
     path('listaProductos/', lista_productos_view, name="listaProductos"),
 
     path('listaClientes/', lista_clientes_view, name="listaClientes"),

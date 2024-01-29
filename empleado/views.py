@@ -64,3 +64,11 @@ def modificar_empleado_view(request, idempleado):
         return redirect("../login/")
 
 
+def eliminar_empleado(request, id_empleado):
+    if request.user.is_authenticated:
+        user = request.user
+        empleado = get_object_or_404(Empleados, idempleado=id_empleado)
+        empleado.delete()
+        return redirect('listaEmpleados')
+    else:
+        return redirect("../login/")
