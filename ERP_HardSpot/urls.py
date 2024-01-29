@@ -22,9 +22,9 @@ from django.urls import path
 from ERP_HardSpot import settings
 from login.views import login_view, register_view, empleado_contrasegna_view
 from empleado.views import lista_empleados_view, empleado_view, modificar_empleado_view, eliminar_empleado
-from producto.views import lista_productos_view
-from clientes.views import lista_clientes_view
-from proveedores.views import lista_proveedores_view
+from producto.views import lista_productos_view, modificar_producto_view, eliminar_producto
+from clientes.views import lista_clientes_view, modificar_cliente_view, eliminar_cliente
+from proveedores.views import lista_proveedores_view, modificar_proveedor_view, eliminar_proveedor
 from core.views import home_view
 
 
@@ -38,11 +38,18 @@ urlpatterns = [
     path('empleado/', empleado_view, name="empleado"),
     path('empleadoContraseña/', empleado_contrasegna_view, name="empleadoContraseña"),
     path('eliminar_empleado/<int:id_empleado>/', eliminar_empleado, name='eliminar_empleado'),
+
     path('listaProductos/', lista_productos_view, name="listaProductos"),
+    path('listaProductos/<int:idproducto>/', modificar_producto_view, name="modificar_producto"),
+    path('eliminar_producto/<int:id_producto>/', eliminar_producto, name='eliminar_producto'),
 
     path('listaClientes/', lista_clientes_view, name="listaClientes"),
+    path('listaClientes/<int:id_cliente>/', modificar_cliente_view, name="modificar_cliente"),
+    path('eliminar_cliente/<int:id_cliente>/', eliminar_cliente, name='eliminar_cliente'),
 
     path('listaProveedores/', lista_proveedores_view, name="listaProveedores"),
+    path('listaProveedores/<int:id_proveedor>/', modificar_proveedor_view, name="modificar_proveedor"),
+    path('eliminar_proveedor/<int:id_proveedor>/', eliminar_proveedor, name='eliminar_proveedor'),
 
     path('', home_view, name="home"),
     path('admin/', admin.site.urls),

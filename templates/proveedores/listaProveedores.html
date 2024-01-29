@@ -132,7 +132,7 @@
                                     </thead>
                                     <tbody>
                                         {% for proveedor in proveedores %}
-                                            <tr style="cursor:pointer;">
+                                            <tr onclick="location.href='{% url 'modificar_proveedor' id_proveedor=proveedor.idproveedor %}'"  style="cursor:pointer;">
                                                 <td>{{ proveedor.idproveedor }}</td>
                                                 <td>{{ proveedor.nombre }}</td>
                                                 <td>{{ proveedor.email }}</td>

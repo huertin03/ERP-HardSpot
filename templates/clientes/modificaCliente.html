@@ -165,8 +165,11 @@
 </style>
 <script>
     var originalValues = [];
+    var originalSelectValue;
     window.onload = function () {
         var inputs = document.getElementsByTagName("input");
+        var select = document.getElementById("metodo_pago");
+        originalSelectValue = select.value;
         for (var i = 0; i < inputs.length; i++) {
             originalValues[i] = inputs[i].value;
         }
@@ -174,6 +177,7 @@
     
     window.editar = function () {
         var inputs = document.getElementsByTagName("input");
+        var select = document.getElementById("metodo_pago");
         var btnEditar = document.getElementById("editar");
         var btnGuardar = document.getElementById("guardar");
         if(btnEditar.innerText==="Editar"){
@@ -183,6 +187,7 @@
                 if (inputs[i].id !== "sexo" && inputs[i].id !== "email")
                     inputs[i].disabled = false;
             }
+            select.disabled = false;
             btnEditar.classList.remove("btn-primary");
             btnEditar.classList.add("btn-danger");
         }else{
@@ -194,6 +199,8 @@
                 inputs[i].disabled = true;
                 inputs[i].value = originalValues[i];
             }
+            select.disabled = true;
+            select.value = originalSelectValue;
         }
 
     }
@@ -208,18 +215,9 @@
                     <div class="card h-100" style="border-radius: 1rem;background-color: #AFBF73;">
                         <div style="height: 30%" class="row g-0 d-flex">
                             <div class="d-flex justify-content-center align-items-center">
-                                <div class="circle-container mt-3">
-                                    <img src="https://i0.wp.com/www.stignatius.co.uk/wp-content/uploads/2020/10/default-user-icon.jpg?w=415&ssl=1"
-                                        alt="Usuario por defecto">
-                                </div>
+
                             </div>
                             <div class="d-flex justify-content-end align-items-start mt-3" style="position: absolute">
-                                {% if empleado.idempleado == user.idempleado %}
-                                <form action="{% url 'logout' %}" method="post" class="me-3">
-                                    {% csrf_token %}
-                                    <button type="submit" class="btn btn-danger">Logout</button>
-                                </form>
-                                {% endif %}
                                 <a href="{% url 'home' %}"><span
                                         class="material-symbols-outlined me-3 fs-1 text-light">home</span></a>
                             </div>
@@ -231,39 +229,39 @@
 
                                 <div class="mb-4 mt-4">
                                     <form method="POST"
-                                        action="{% if empleado.idempleado == user.idempleado %}{% url 'empleado' %}{% else %}{% url 'modificar_empleado' empleado.idempleado %}{% endif %}">
+                                        action="{% url 'modificar_cliente' cliente.idcliente %}">
                                         {% csrf_token %}
                                         <input type="text" class="form-control shadow " disabled id="nombre"
-                                            name="nombre" value="{{ empleado.nombre }}" placeholder="Nombre">
-
+                                            name="nombre" value="{{ cliente.nombre }}" placeholder="Nombre">
                                 </div>
                                 <div class="mb-4">
                                     <input type="email" class="form-control shadow" disabled id="email" name="email"
-                                        value="{{ empleado.email }}">
+                                        value="{{ cliente.email }}">
                                 </div>
                                 <div class="mb-4">
                                     <input type="text" class="form-control shadow" disabled id="direccion"
-                                        name="direccion" value="{{ empleado.direccion|default_if_none:'' }}"
+                                        name="direccion" value="{{ cliente.direccion|default_if_none:'' }}"
                                         placeholder="Dirección">
                                 </div>
-                                <div>
-                                    <input type="text" class="form-control shadow" disabled id="sexo" name="sexo"
-                                        value="{{ empleado.sexo }}">
-                                </div>
+                                
                             </div>
                             <div class="col-6 bg-light">
                                 <div class="mb-4 mt-4">
                                     <input type="text" class="form-control shadow" disabled id="apellidos"
-                                        name="apellidos" value="{{ empleado.apellidos|default_if_none:'' }}"
+                                        name="apellidos" value="{{ cliente.apellidos|default_if_none:'' }}"
                                         placeholder="Apellidos">
                                 </div>
                                 <div class="mb-4">
                                     <input type="tel" class="form-control shadow" disabled id="telefono" name="telefono"
-                                        value="{{ empleado.telefono|default_if_none:0 }}" placeholder="Teléfono">
+                                        value="{{ cliente.telefono|default_if_none:0 }}" placeholder="Teléfono">
                                 </div>
                                 <div class="mb-4">
-                                    <input type="number" class="form-control shadow" disabled id="edad" name="edad"
-                                        value="{{ empleado.edad|default_if_none:0 }}" placeholder="Edad">
+                                    <select class="form-control shadow" id="metodo_pago" name="metodo_pago" disabled>
+                                        <option value="Tarjeta de Credito" {% if cliente.metodo_de_pago == "Tarjeta de Credito" %}selected{% endif %}>Tarjeta de Credito</option>
+                                        <option value="Transferencia Bancaria" {% if cliente.metodo_de_pago == "Transferencia Bancaria" %}selected{% endif %}>Transferencia Bancaria</option>
+                                        <option value="PayPal" {% if cliente.metodo_de_pago == "PayPal" %}selected{% endif %}>PayPal</option>
+                                        <option value="Efectivo" {% if cliente.metodo_de_pago == "Efectivo" %}selected{% endif %}>Efectivo</option>
+                                    </select>
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <input id="guardar" type="hidden" value="Guardar" class="btn btn-success me-3" />
@@ -275,7 +273,7 @@
                         <div class="d-flex justify-content-center mb-2">
                             <button id="editar" onclick="editar()" class="btn btn-info me-3">Editar</button>
                             {% if empleado.idempleado != user.idempleado %}
-                                <a href="{% url 'eliminar_empleado' empleado.idempleado %}" class="button">
+                                <a href="{% url 'eliminar_cliente' cliente.idcliente %}" class="button">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 69 14"
                                         class="svgIcon bin-top">
                                         <g clip-path="url(#clip0_35_24)">

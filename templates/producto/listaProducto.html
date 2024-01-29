@@ -130,7 +130,7 @@
                                     </thead>
                                     <tbody>
                                         {% for producto in productos %}
-                                            <tr style="cursor:pointer;">
+                                            <tr onclick="location.href='{% url 'modificar_producto' idproducto=producto.idproducto %}'"  style="cursor:pointer;">
                                                 <td>{{ producto.idproducto }}</td>
                                                 <td>{{ producto.nombre }}</td>
                                                 <td>{{ producto.precio }}</td>
