@@ -79,16 +79,16 @@
                                 <form action="{% url 'listaProductos' %}" method="post" class="row g-3">
                                     {% csrf_token %}
                                     <div class="col">
-                                        <input type="text" id="nombre" name="nombre" class="form-control mt-1" placeholder="Nombre">
+                                        <input type="text" id="nombre" name="nombre" class="form-control mt-1" placeholder="Nombre" required>
                                     </div>
                                     <div class="col">
-                                        <input type="number" step="0.01" min="1" id="precio" name="precio" class="form-control mt-1" placeholder="Precio">
+                                        <input type="number" step="0.01" min="1" id="precio" name="precio" class="form-control mt-1" placeholder="Precio" required>
                                     </div>
                                     <div class="col">
-                                        <input type="text" id="categoria" name="categoria" class="form-control mt-1" placeholder="Categoría">
+                                        <input type="text" id="categoria" name="categoria" class="form-control mt-1" placeholder="Categoría" required>
                                     </div>
                                     <div class="col">
-                                        <input type="text" id="descripcion" name="descripcion" class="form-control mt-1" placeholder="Descripción">
+                                        <input type="text" id="descripcion" name="descripcion" class="form-control mt-1" placeholder="Descripción" required>
                                     </div>
                                     <div class="col">
                                         <input type="submit" value="Agregar" class="btn btn-success mt-1">

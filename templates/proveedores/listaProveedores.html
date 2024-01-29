@@ -80,16 +80,16 @@
                                 <form action="{% url 'listaProveedores' %}" method="post" class="row g-3">
                                     {% csrf_token %}
                                     <div class="col">
-                                        <input type="text" id="nombre" name="nombre" class="form-control mt-1" placeholder="Nombre">
+                                        <input type="text" id="nombre" name="nombre" class="form-control mt-1" placeholder="Nombre" required>
                                     </div>
                                     <div class="col">
-                                        <input type="text" id="email" name="email" class="form-control mt-1" placeholder="Email">
+                                        <input type="text" id="email" name="email" class="form-control mt-1" placeholder="Email" required>
                                     </div>
                                     <div class="col">
-                                        <input type="text" id="telefono" name="telefono" class="form-control mt-1" placeholder="Teléfono">
+                                        <input type="text" id="telefono" name="telefono" class="form-control mt-1" placeholder="Teléfono" required>
                                     </div>
                                     <div class="col">
-                                        <input type="text" id="direccion" name="direccion" class="form-control mt-1" placeholder="Dirección">
+                                        <input type="text" id="direccion" name="direccion" class="form-control mt-1" placeholder="Dirección" required>
                                     </div>
                                     <div class="col">
                                         <input type="submit" value="Agregar" class="btn btn-success mt-1">
