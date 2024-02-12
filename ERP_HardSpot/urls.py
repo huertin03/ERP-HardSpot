@@ -19,13 +19,12 @@ from django.contrib import admin
 from django.contrib.auth.views import LogoutView
 from django.urls import path
 
-from ERP_HardSpot import settings
-from login.views import login_view, register_view, empleado_contrasegna_view
-from empleado.views import lista_empleados_view, empleado_view, modificar_empleado_view, eliminar_empleado
-from producto.views import lista_productos_view, modificar_producto_view, eliminar_producto
-from clientes.views import lista_clientes_view, modificar_cliente_view, eliminar_cliente
-from proveedores.views import lista_proveedores_view, modificar_proveedor_view, eliminar_proveedor
-from core.views import home_view
+from login.views import *
+from empleado.views import *
+from producto.views import *
+from clientes.views import *
+from proveedores.views import *
+from core.views import *
 
 
 urlpatterns = [

@@ -139,9 +139,9 @@
                                         {% for cliente in clientes %}
                                             <tr onclick="location.href='{% url 'modificar_cliente' id_cliente=cliente.idcliente %}'" style="cursor:pointer;">
                                                 <td>{{ cliente.idcliente }}</td>
-                                                <td>{{ cliente.nombre }}</td>
-                                                <td>{{ cliente.apellidos }}</td>
-                                                <td>{{ cliente.email }}</td>
+                                                <td>{{ cliente.user.nombre }}</td>
+                                                <td>{{ cliente.apellidos|default_if_none:'&nbsp;' }}</td>
+                                                <td>{{ cliente.user.email }}</td>
                                                 <td>{{ cliente.telefono|default_if_none:'&nbsp;' }}</td>    
                                                 <td class="ellipsis">{{ cliente.direccion|default_if_none:'&nbsp;' }}</td>
                                                 <td>{{ cliente.metodo_de_pago|default_if_none:'&nbsp;' }}</td>

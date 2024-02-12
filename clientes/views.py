@@ -33,9 +33,7 @@ def modificar_cliente_view(request, id_cliente):
             telefono = request.POST.get('telefono')
             direccion = request.POST.get('direccion')
             metodo_de_pago = request.POST.get('metodo_de_pago')
-            cliente.nombre = nombre if nombre is not None else cliente.nombre
             cliente.apellidos = apellidos if apellidos is not None else cliente.apellidos
-            cliente.email = email if email is not None else cliente.email
             cliente.telefono = telefono if telefono is not None else cliente.telefono
             cliente.direccion = direccion if direccion is not None else cliente.direccion
             cliente.metodo_de_pago = metodo_de_pago if metodo_de_pago is not None else cliente.metodo_de_pago

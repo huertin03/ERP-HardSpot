@@ -14,7 +14,7 @@ def lista_productos_view(request):
             producto.save()
 
         user = request.user
-        productos = Productos.objects.all()
+        productos = Productos.objects.all().prefetch_related('productostock_set')
         return render(request, 'producto/listaProducto.html', {'user': user, 'productos': productos})
     else:
         return redirect("login")

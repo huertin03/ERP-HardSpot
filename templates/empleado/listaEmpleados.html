@@ -87,11 +87,11 @@
                                         {% for empleado in empleados %}
                                             <tr onclick="location.href='{% url 'modificar_empleado' idempleado=empleado.idempleado %}'" style="cursor:pointer;">
                                                 <td>{{ empleado.idempleado }}</td>
-                                                <td>{{ empleado.nombre }}</td>
+                                                <td>{{ empleado.user.nombre }}</td>
                                                 <td>{{ empleado.apellidos|default_if_none:'&nbsp;' }}</td>
                                                 <td>{{ empleado.sexo }}</td>
                                                 <td>{{ empleado.telefono|default_if_none:'&nbsp;' }}</td>
-                                                <td>{{ empleado.email }}</td>
+                                                <td>{{ empleado.user.email }}</td>
                                                 <td>{{ empleado.direccion|default_if_none:'&nbsp;' }}</td>
                                             </tr>
                                         {% endfor %}

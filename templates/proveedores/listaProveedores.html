@@ -92,6 +92,9 @@
                                         <input type="text" id="direccion" name="direccion" class="form-control mt-1" placeholder="Dirección" required>
                                     </div>
                                     <div class="col">
+                                        <input type="text" id="categoria" name="categoria" class="form-control mt-1" placeholder="Categoría" required>
+                                    </div>
+                                    <div class="col">
                                         <input type="submit" value="Agregar" class="btn btn-success mt-1">
                                     </div>
                                 </form>
@@ -128,6 +131,7 @@
                                             <th>Email</th>
                                             <th>Tel&eacute;fono</th>
                                             <th>Direcci&oacute;n</th>
+                                            <th>Categoría</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -138,6 +142,7 @@
                                                 <td>{{ proveedor.email }}</td>
                                                 <td>{{ proveedor.telefono|default_if_none:'&nbsp;' }}</td>    
                                                 <td class="ellipsis">{{ proveedor.direccion|default_if_none:'&nbsp;' }}</td>
+                                                <td>{{ proveedor.categoria|default_if_none:'&nbsp;' }}</td>
                                             </tr>
                                         {% endfor %}
                                     </tbody>

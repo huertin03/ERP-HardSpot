@@ -10,7 +10,8 @@ def lista_proveedores_view(request):
             email = request.POST.get('email')
             telefono = request.POST.get('telefono')
             direccion = request.POST.get('direccion')
-            proveedor = Proveedores(nombre=nombre, email=email, telefono=telefono, direccion=direccion)
+            categoria = request.POST.get('categoria')
+            proveedor = Proveedores(nombre=nombre, email=email, telefono=telefono, direccion=direccion, categoria=categoria)
             proveedor.save()
 
         user = request.user
@@ -29,6 +30,7 @@ def modificar_proveedor_view(request, id_proveedor):
             email = request.POST.get('email')
             telefono = request.POST.get('telefono')
             direccion = request.POST.get('direccion')
+            categoria = request.POST.get('categoria')
             proveedor.nombre = nombre if nombre is not None else proveedor.nombre
             proveedor.email = email if email is not None else proveedor.email
             proveedor.telefono = telefono if telefono is not None else proveedor.telefono

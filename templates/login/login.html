@@ -42,12 +42,11 @@
                                                 <input type="password" class="form-control" id="{{ form.password.id_for_label }}" name="{{ form.password.name }}" placeholder="Contraseña" required>
                                             </div>
                                         </div>
-
                                         <div class="pt-1 mb-4">
                                             <button class="btn btn-primary btn-lg btn-block" type="submit">Iniciar Sesión</button>
                                         </div>
                                         <p class="mb-5 pb-lg-2" style="color: #393f81;"> 
-                                            <a href="../register" style="color: #393f81;">¿Aún no tienes cuenta?</a>
+                                            <a href="{% url 'register' %}" style="color: #393f81;">¿Aún no tienes cuenta?</a>
                                         </p>
                                     </form>
                                     {% if form.non_field_errors %}

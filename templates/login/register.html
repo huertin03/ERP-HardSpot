@@ -69,12 +69,30 @@
                                             {% endif %}
                                         </div>
 
+                                        <div class="mb-3">
+                                                {% for choice in form.user_type %}
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="{{ form.user_type.name }}" id="{{ choice.id_for_label }}" value="{{ choice.data.value }}">
+                                                        <label class="form-check-label" for="{{ choice.id_for_label }}">
+                                                            {{ choice.choice_label }}
+                                                        </label>
+                                                    </div>
+                                                {% endfor %}
+                                                {% if form.user_type.errors %}
+                                                    {% for error in form.user_type.errors %}
+                                                        <div class="text-danger" role="alert">
+                                                            {{ error }}
+                                                        </div>
+                                                    {% endfor %}
+                                                {% endif %}
+                                        </div>
+                                    
                                         <div class="pt-1 mb-4">
                                             <button class="btn btn-primary btn-lg btn-block" type="submit">Aceptar</button>
                                         </div>
                                         </form>
-                                        <p class="mb-5 pb-lg-2" style="color: #393f81;"> 
-                                            <a href="../login" style="color: #393f81;">Inicio de sesión</a>
+                                        <p class="pb-lg-2" style="color: #393f81;"> 
+                                            <a href="{% url 'login' %}" style="color: #393f81;">Inicio de sesión</a>
                                         </p>
                                         {% if form.has_error %}
                                             <div class="alert alert-danger" role="alert">
@@ -86,7 +104,7 @@
                             </div>
                             <div class="col-md-6 col-lg-6 d-none d-md-block">
                                 <img src="{%  static  'login/registerImg.jpg' %}"
-                                    alt="register form" class="h-100 w-100" style="border-radius: 1rem 0 0 1rem;" />
+                                    alt="register form" class="w-100" style="border-radius: 1rem 0 0 1rem; height: 93%" />
                             </div>
                         </div>
                     </div>

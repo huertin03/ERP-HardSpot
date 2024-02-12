@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 
-from login.models import Empleados
+from empleado.models import Empleados
 
 
 def lista_empleados_view(request):
@@ -17,13 +17,13 @@ def empleado_view(request):
     if request.user.is_authenticated:
         user = request.user
         if request.method == 'POST':
-            idempleado = user.idempleado
+            # idempleado = user.idempleado
             nombre = request.POST.get('nombre')
             apellidos = request.POST.get('apellidos')
             edad = request.POST.get('edad')
             telefono = request.POST.get('telefono')
             direccion = request.POST.get('direccion')
-            empleado = Empleados.objects.get(idempleado=idempleado)
+            empleado = Empleados.objects.get(user=user)
             empleado.nombre = nombre if nombre is not None else empleado.nombre
             empleado.apellidos = apellidos if apellidos is not None else empleado.apellidos
             edad = int(edad) if edad != '' else 0
@@ -35,7 +35,7 @@ def empleado_view(request):
             # messages.success(request, 'Empleado modificado correctamente')
             return redirect('../')
         else:
-            return render(request, "empleado/modificaEmpleado.html", {"user": user, "empleado": user})
+            return render(request, "empleado/modificaEmpleado.html", {"user": user, "empleado": Empleados.objects.get(user=user)})
     else:
         return redirect("../login/")
 

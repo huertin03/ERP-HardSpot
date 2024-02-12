@@ -50,7 +50,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 20em;
+            max-width: 15em;
         }
     </style>
 </head>
@@ -126,6 +126,7 @@
                                             <th>Precio</th>
                                             <th>Categoría</th>
                                             <th>Descripción</th>
+                                            <th>Stock</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -136,6 +137,7 @@
                                                 <td>{{ producto.precio }}</td>
                                                 <td>{{ producto.categoria|default_if_none:'&nbsp;' }}</td>
                                                 <td class="ellipsis">{{ producto.descripcion|default_if_none:'&nbsp;' }}</td>
+                                                <td>{{ producto.productostock_set.first.cantidadactual|default:0 }}</td>
                                             </tr>
                                         {% endfor %}
                                     </tbody>

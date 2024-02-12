@@ -1,8 +1,9 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, HttpResponse, redirect
 
+from clientes.models import Clientes
 from login.forms import LoginForm, RegisterForm
-from login.models import Empleados
+from login.models import User
 
 
 def login_view(request):
@@ -12,7 +13,7 @@ def login_view(request):
             email = form.cleaned_data['username']
             password = form.cleaned_data['password']
 
-            user = Empleados.objects.filter(email=email).first()
+            user = User.objects.filter(email=email).first()
             user = authenticate(username=email, password=password)
 
             if user is not None:
@@ -29,14 +30,15 @@ def login_view(request):
 
 def register_view(request):
     if request.method == "POST":
-        print('request is post')
+        print(request.POST)
         form = RegisterForm(data=request.POST)
+        print('user type: ', form.data['user_type'])
         print('form creado')
         if form.is_valid():
             print('form is valid')
             user = form.save()
             login(request, user)
-            return redirect("../")
+            return redirect("home")
         else:
             print('form is not valid')
             print(form.errors)
@@ -52,7 +54,3 @@ def empleado_view(request):
 
 def empleado_contrasegna_view(request):
     return render(request, "empleado/modificaEmpleadoContraseña.html")
-
-
-def home_view(request):
-    return render(request, "home/../templates/core/home.html")
