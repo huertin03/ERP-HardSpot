@@ -218,6 +218,12 @@
 
                             </div>
                             <div class="d-flex justify-content-end align-items-start mt-3" style="position: absolute">
+                                
+                                <form action="{% url 'logout' %}" method="post" class="me-3">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Logout</button>
+                                </form>
+                                
                                 <a href="{% url 'home' %}"><span
                                         class="material-symbols-outlined me-3 fs-1 text-light">home</span></a>
                             </div>
@@ -228,8 +234,13 @@
                             <div class="col-6 bg-light">
 
                                 <div class="mb-4 mt-4">
+                                    {% if cliente.user.id != user.id %}
                                     <form method="POST"
                                         action="{% url 'modificar_cliente' cliente.idcliente %}">
+                                        {% else %}
+                                        <form method="POST"
+                                            action="{% url 'modificar_cliente_usuario' %}">
+                                            {% endif %}
                                         {% csrf_token %}
                                         <input type="text" class="form-control shadow " disabled id="nombre"
                                             name="nombre" value="{{ cliente.user.nombre }}" placeholder="Nombre">
@@ -272,7 +283,7 @@
                         </div>
                         <div class="d-flex justify-content-center mb-2">
                             <button id="editar" onclick="editar()" class="btn btn-info me-3">Editar</button>
-                            {% if empleado.idempleado != user.idempleado %}
+                            {% if cliente.user.id != user.id %}
                                 <a href="{% url 'eliminar_cliente' cliente.idcliente %}" class="button">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 69 14"
                                         class="svgIcon bin-top">

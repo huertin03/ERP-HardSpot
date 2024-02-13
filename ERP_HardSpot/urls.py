@@ -39,11 +39,16 @@ urlpatterns = [
     path('eliminar_empleado/<int:id_empleado>/', eliminar_empleado, name='eliminar_empleado'),
 
     path('listaProductos/', lista_productos_view, name="listaProductos"),
+    path('productos/', lista_productos_cliente_view, name="listaProductosCliente"),
     path('listaProductos/<int:idproducto>/', modificar_producto_view, name="modificar_producto"),
     path('eliminar_producto/<int:id_producto>/', eliminar_producto, name='eliminar_producto'),
 
+    path('hacerPedido/', hacer_pedido, name="hacerPedido"),
+    path('hacerPedidoCliente/', hacer_pedido_cliente, name="hacerPedidoCliente"),
+
     path('listaClientes/', lista_clientes_view, name="listaClientes"),
     path('listaClientes/<int:id_cliente>/', modificar_cliente_view, name="modificar_cliente"),
+    path('usuarioCliente/', modificar_cliente_usuario_view, name='modificar_cliente_usuario'),
     path('eliminar_cliente/<int:id_cliente>/', eliminar_cliente, name='eliminar_cliente'),
 
     path('listaProveedores/', lista_proveedores_view, name="listaProveedores"),
@@ -52,4 +57,5 @@ urlpatterns = [
 
     path('', home_view, name="home"),
     path('admin/', admin.site.urls),
+    path('ruta/a/la/vista/csrf/', csrf, name='csrf'),
 ]

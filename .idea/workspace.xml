@@ -5,45 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5839738-bd17-402f-8c76-e8167caa391c" name="Changes" comment="CRUD completado para Clientes, Productos, Proveedores y Empleados">
-      <change afterPath="$PROJECT_DIR$/clientes/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/empleado/migrations/0011_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/empleado/migrations/0012_empleados_apellidos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/migrations/0002_remove_user_username_alter_user_user_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proveedores/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/login/login_clientes.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/login/register_cliente.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/core/homeCliente.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/producto/listaProductoCliente.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ERP_HardSpot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ERP_HardSpot/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ERP_HardSpot/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ERP_HardSpot/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clientes/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clientes/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empleado/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/empleado/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empleado/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/empleado/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/migrations/0002_alter_empleados_contrasena.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/migrations/0003_alter_empleados_email.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/migrations/0004_empleados_groups_empleados_is_superuser_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/migrations/0005_alter_empleados_contrasena.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/migrations/0006_remove_empleados_contrasena_alter_empleados_password.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/migrations/0007_remove_empleados_contrasena_alter_empleados_password.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/migrations/0008_empleados_direccion_empleados_sexo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/producto/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/producto/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/producto/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/producto/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proveedores/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proveedores/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clientes/listaClientes.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clientes/listaClientes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/clientes/modificaCliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clientes/modificaCliente.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/empleado/listaEmpleados.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/empleado/listaEmpleados.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/empleado/modificaEmpleado.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/empleado/modificaEmpleado.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/producto/listaProducto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/producto/listaProducto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/proveedores/listaProveedores.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/proveedores/listaProveedores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/proveedores/modificaProveedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/proveedores/modificaProveedor.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,6 +194,8 @@
       <workItem from="1707492824437" duration="10069000" />
       <workItem from="1707564483256" duration="10548000" />
       <workItem from="1707644663118" duration="5455000" />
+      <workItem from="1707751296495" duration="9825000" />
+      <workItem from="1707810256057" duration="9530000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial">
       <option name="closed" value="true" />
