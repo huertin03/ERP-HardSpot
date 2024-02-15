@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 
+from producto.models import Productos
 from proveedores.models import Proveedores
 
 
@@ -39,7 +40,8 @@ def modificar_proveedor_view(request, id_proveedor):
             # messages.success(request, 'Empleado modificado correctamente')
             return redirect('listaProveedores')
         else:
-            return render(request, "proveedores/modificaProveedor.html", {"user": user, "proveedor": proveedor})
+            productos = Productos.objects.filter(categoria=proveedor.categoria)
+            return render(request, "proveedores/modificaProveedor.html", {"user": user, "proveedor": proveedor, "productos": productos})
     else:
         return redirect("login")
 

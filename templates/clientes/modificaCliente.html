@@ -217,6 +217,11 @@
                             <div class="d-flex justify-content-center align-items-center">
 
                             </div>
+                            <div class="d-flex justify-content-start align-items-end">
+                                <button class="btn btn-success ms-5">
+                                    <a href="{% url 'facturas' cliente.idcliente %}"><p class="text-light">Facturas</p><span class="material-symbols-outlined fs-1 text-light">receipt_long</span></a>
+                                </button>
+                            </div>
                             <div class="d-flex justify-content-end align-items-start mt-3" style="position: absolute">
                                 
                                 <form action="{% url 'logout' %}" method="post" class="me-3">

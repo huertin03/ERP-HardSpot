@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.contrib.auth.views import LogoutView
 from django.urls import path
 
+from facturas.views import *
 from login.views import *
 from empleado.views import *
 from producto.views import *
@@ -45,6 +46,9 @@ urlpatterns = [
 
     path('hacerPedido/', hacer_pedido, name="hacerPedido"),
     path('hacerPedidoCliente/', hacer_pedido_cliente, name="hacerPedidoCliente"),
+    path('hacerPedidoProveedor/<int:id_proveedor>/', hacer_pedido_proveedor, name="hacerPedidoProveedor"),
+
+    path('borrarPedidoCliente/<int:id_factura>/', borrar_pedido_cliente, name="borrarPedidoCliente"),
 
     path('listaClientes/', lista_clientes_view, name="listaClientes"),
     path('listaClientes/<int:id_cliente>/', modificar_cliente_view, name="modificar_cliente"),
@@ -54,6 +58,11 @@ urlpatterns = [
     path('listaProveedores/', lista_proveedores_view, name="listaProveedores"),
     path('listaProveedores/<int:id_proveedor>/', modificar_proveedor_view, name="modificar_proveedor"),
     path('eliminar_proveedor/<int:id_proveedor>/', eliminar_proveedor, name='eliminar_proveedor'),
+
+    path('facturas/<int:idCliente>/', listaFacturaXCliente_view, name='facturas'),
+    path('facturasClientes/', listaFacturasCliente, name='listaFacturasCliente'),
+    path('detalleFactura/<int:idFactura>/', detalleFactura, name='detallar_factura'),
+    path('facturas/', listarFacturas, name='listaFacturas'),
 
     path('', home_view, name="home"),
     path('admin/', admin.site.urls),

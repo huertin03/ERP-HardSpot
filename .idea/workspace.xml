@@ -4,16 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5839738-bd17-402f-8c76-e8167caa391c" name="Changes" comment="CRUD completado para Clientes, Productos, Proveedores y Empleados">
-      <change afterPath="$PROJECT_DIR$/templates/core/homeCliente.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/producto/listaProductoCliente.html" afterDir="false" />
+    <list default="true" id="b5839738-bd17-402f-8c76-e8167caa391c" name="Changes" comment="Añadido menu de clientes y la funcionalidad de que estos hagan pedidos">
+      <change afterPath="$PROJECT_DIR$/facturas/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facturas/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facturas/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facturas/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facturas/migrations/0002_facturascompuesto_facturas_compuesto_idfactura_idproducto_key.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facturas/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facturas/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facturas/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/facturas/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/producto/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/facturas/detalleFactura.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ERP_HardSpot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ERP_HardSpot/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ERP_HardSpot/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ERP_HardSpot/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clientes/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/producto/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/producto/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proveedores/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/clientes/modificaCliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clientes/modificaCliente.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/producto/listaProducto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/producto/listaProducto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/core/homeCliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/core/homeCliente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/producto/listaProductoCliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/producto/listaProductoCliente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/proveedores/modificaProveedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/proveedores/modificaProveedor.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,11 +137,11 @@
       <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\templates\login" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\templates" />
       <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\templates\core" />
       <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\templates\empleado" />
       <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\static\login" />
       <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot" />
-      <recent name="C:\Users\Álvaro Huertas\Desktop\DAM2\Sistemas de Gestión Empresarial\Django-ERP\ERP_HardSpot\templates\static" />
     </key>
   </component>
   <component name="RunManager">
@@ -195,7 +206,14 @@
       <workItem from="1707564483256" duration="10548000" />
       <workItem from="1707644663118" duration="5455000" />
       <workItem from="1707751296495" duration="9825000" />
-      <workItem from="1707810256057" duration="9530000" />
+      <workItem from="1707810256057" duration="10097000" />
+      <workItem from="1707837959495" duration="700000" />
+      <workItem from="1707919650095" duration="1364000" />
+      <workItem from="1707921206882" duration="4379000" />
+      <workItem from="1707925759933" duration="2159000" />
+      <workItem from="1707927968897" duration="650000" />
+      <workItem from="1707989382946" duration="8332000" />
+      <workItem from="1708007324244" duration="671000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial">
       <option name="closed" value="true" />
@@ -325,7 +343,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706556526855</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Añadido menu de clientes y la funcionalidad de que estos hagan pedidos">
+      <option name="closed" value="true" />
+      <created>1707824552448</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1707824552448</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +383,8 @@
     <MESSAGE value="Push para mi queridisimo Alejandro" />
     <MESSAGE value="Completed CRUD on Empleados" />
     <MESSAGE value="CRUD completado para Clientes, Productos, Proveedores y Empleados" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD completado para Clientes, Productos, Proveedores y Empleados" />
+    <MESSAGE value="Añadido menu de clientes y la funcionalidad de que estos hagan pedidos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadido menu de clientes y la funcionalidad de que estos hagan pedidos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

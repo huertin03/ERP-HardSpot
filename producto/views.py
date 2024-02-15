@@ -141,6 +141,38 @@ def hacer_pedido_cliente(request):
         return redirect('login')
 
 
+def hacer_pedido_proveedor(request, id_proveedor):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            productos_ids = request.POST.getlist('producto')
+            cantidades = request.POST.getlist('cantidad')
+
+            # Asegúrate de que las listas de productos y cantidades tienen la misma longitud
+            if len(productos_ids) != len(cantidades):
+                messages.error(request, 'Los datos del formulario son inválidos.')
+                return redirect('hacerPedido')
+
+            ids_productos = ','.join(productos_ids)
+            cantidades = ','.join(cantidades)
+            print("productos_ids: ", productos_ids)
+            print("cantidades: ", cantidades)
+            llamar_procedimiento_almacenado(id_proveedor, ids_productos, cantidades)
+            pass
+
+        return redirect('modificar_proveedor', id_proveedor)
+    else:
+        return redirect('login')
+
+
+def borrar_pedido_cliente(request, id_factura):
+    if request.user.is_authenticated:
+        with connection.cursor() as cursor:
+            cursor.callproc('EliminarFactura', [id_factura])
+        return redirect('listaFacturasCliente')
+    else:
+        return redirect('login')
+
+
 def csrf(request):
     return HttpResponse(get_token(request))
 

@@ -215,6 +215,116 @@
                                         class="material-symbols-outlined me-3 fs-1 text-light">home</span></a>
                             </div>
                         </div>
+                        
+                        
+                        <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Hacer pedido</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form action="{% url 'hacerPedidoProveedor' id_proveedor=proveedor.idproveedor %}" method="post" class="d-flex flex-column align-items-center">
+                                        {% csrf_token %}
+                                    <div class="d-flex flex-row align-items-center">
+                                      <div class="mb-3 me-3">
+                                        <label for="producto" class="form-label">Producto</label>
+                                        <select id="producto" name="producto" class="form-select">
+                                          {% for producto in productos %}
+                                            <option value="{{ producto.idproducto }}">{{ producto.nombre }}</option>
+                                          {% endfor %}
+                                        </select>
+                                      </div>
+                                      <div class="mb-3">
+                                        <label for="cantidad" class="form-label">Cantidad</label>
+                                        <input type="number" id="cantidad" name="cantidad" class="form-control" min="1" required>
+                                      </div>
+                                    </div>
+                                    <button type="button" class="btn btn-light" onclick="agregarEntrada()">+</button>
+                                      <!-- Resto del formulario -->
+                                    <script>
+                                      var contador = 1;
+                                    
+                                      function agregarEntrada() {
+                                        // Crear nuevos elementos
+                                        var divProducto = document.createElement("div");
+                                        var labelProducto = document.createElement("label");
+                                        var selectProducto = document.createElement("select");
+                                        var divCantidad = document.createElement("div");
+                                        var labelCantidad = document.createElement("label");
+                                        var inputCantidad = document.createElement("input");
+                                    
+                                        // Configurar los atributos de los nuevos elementos
+                                        divProducto.className = "mb-3 me-3";
+                                        labelProducto.className = "form-label";
+                                        labelProducto.htmlFor = "producto" + contador;
+                                        labelProducto.textContent = "Producto";
+                                        selectProducto.id = "producto" + contador;
+                                        selectProducto.name = "producto";
+                                        selectProducto.className = "form-select";
+                                    
+                                        divCantidad.className = "mb-3";
+                                        labelCantidad.className = "form-label";
+                                        labelCantidad.htmlFor = "cantidad" + contador;
+                                        labelCantidad.textContent = "Cantidad";
+                                        inputCantidad.type = "number";
+                                        inputCantidad.id = "cantidad" + contador;
+                                        inputCantidad.name = "cantidad";
+                                        inputCantidad.className = "form-control";
+                                        inputCantidad.min = "1";
+                                        inputCantidad.required = true;
+                                    
+                                        // Añadir las opciones al select
+                                        var productos = document.querySelector("#producto").options;
+                                        for (var i = 0; i < productos.length; i++) {
+                                          var option = document.createElement("option");
+                                          option.value = productos[i].value;
+                                          option.textContent = productos[i].textContent;
+                                          selectProducto.appendChild(option);
+                                        }
+                                    
+                                        // Añadir los elementos al div
+                                        divProducto.appendChild(labelProducto);
+                                        divProducto.appendChild(selectProducto);
+                                        divCantidad.appendChild(labelCantidad);
+                                        divCantidad.appendChild(inputCantidad);
+                                    
+                                        // Crear un nuevo div para contener los elementos y añadirlos al formulario
+                                        var divRow = document.createElement("div");
+                                        divRow.className = "d-flex flex-row align-items-center";
+                                        divRow.appendChild(divProducto);
+                                        divRow.appendChild(divCantidad);
+                                    
+                                        var formulario = document.querySelector("form");
+                                        formulario.insertBefore(divRow, formulario.children[formulario.children.length - 2]);
+                                    
+                                        // Incrementar el contador
+                                        contador++;
+                                        
+                                        
+                                      }
+                                      
+                                      document.addEventListener("DOMContentLoaded", function() {
+                                          document.querySelector("#hacerPedido").onclick = function(event) {
+                                            event.preventDefault(); // Evita que el botón se comporte como un botón de envío normal
+                                            document.querySelector("form[action='{% url 'hacerPedidoProveedor' id_proveedor=proveedor.idproveedor %}']").submit(); // Envía el formulario
+                                          }
+                                        });
+                                    </script>
+                                    </form>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Decartar</button>
+                                    <button type="submit" class="btn btn-success" id="hacerPedido">Confirmar</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        
+                        
+                        
 
                         <div class="row pt-5 ps-5 pe-5 pb-4 " style="height: 70%;z-index: 10;">
 
@@ -237,6 +347,14 @@
                                     <input type="text" class="form-control shadow" disabled id="categoria"
                                         name="categoria" value="{{ proveedor.categoria|default_if_none:'' }}"
                                         placeholder="Categoría">
+                                </div>
+                                <div class="mb-4 d-flex justify-content-center">
+                                    <button type="button" class="btn btn-primary d-flex align-self-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <span class="material-symbols-outlined me-2">
+                                            handshake
+                                        </span>
+                                        Hacer pedido a este proveedor
+                                    </button>
                                 </div>
                                 
                             </div>
@@ -295,6 +413,7 @@
             </div>
         </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>

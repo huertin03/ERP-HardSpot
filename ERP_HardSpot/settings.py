@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "empleado.apps.EmpleadoConfig",
     "producto.apps.ProductoConfig",
     "clientes.apps.ClientesConfig",
-    "proveedores.apps.ProveedoresConfig"
+    "proveedores.apps.ProveedoresConfig",
+    "facturas.apps.FacturasConfig"
 ]
 
 MIDDLEWARE = [
